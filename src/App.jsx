@@ -1,42 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+const Chat = () => {
+  const [messages, setMessages] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const message = event.target.elements.message.value;
+    setMessages([...messages, message]);
+  };
 
   return (
-    <>
+    <div>
+      <h3>Chat</h3>
+      <ul>
+        {messages.map((message) => (
+          <li key={message}>{message}</li>
+        ))}
+      </ul>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="message" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  );
+};
+
+const Menu = () => {
+  return (
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Home | </a>
+        <a href="#">About</a>
+        <a href="#"> | Contact</a></li>
       </ul>
     </nav>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+  );
+};
 
-export default App
+const App = () => {
+  return (
+    <div>
+      <header>
+        <img src="https://static.thairath.co.th/media/Dtbezn3nNUxytg04anFWUDVYRmYXNGatR95AMXpphpB9AW.webp" width="300" height="200" />
+      <div style={{display: "inline-block"}}>
+        <Menu />
+      </div>
+      </header>
+      <Chat />
+    </div>
+  );
+};
+
+
+export default App;
