@@ -29,7 +29,7 @@ const Menu = () => {
   return (
     <nav>
       <ul>
-        <li><a href="#">Home | </a>
+        <li><a href="#">Homepro | </a>
         <a href="#">About</a>
         <a href="#"> | Contact</a></li>
       </ul>
