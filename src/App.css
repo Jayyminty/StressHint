@@ -1,3 +1,39 @@
-.container {
+strong {
+  padding-bottom: 5px;
+}
+
+.container-fluid {
   background-color: #e1fbfa;
+  padding-top: 5px;
+  padding-left: 50px;
+}
+
+.chatroomheader {
+  font-size: 20px;
+  font-display: 20;
+  background-color: #abdbff;
+  padding: auto;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+.navbar {
+  background-color: #e1fbfa;
+  font-size: 100px;
+}
+
+.devi {
+  background-color: #ffffff;
+  padding: 1%;
+}
+
+.chat {
+  background-color: #e1fbfa;
+  padding: 5%;    
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.form-control {
+  background-color: rgb(229, 255, 255);
 }
